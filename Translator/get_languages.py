@@ -22,6 +22,18 @@ def recognise_lang():
         if str(search_lang.capitalize()) in lang['name']:
             print(f"The code for {lang['name']} is {lang['code']}")
         # else:
-        #     print("The language you have entered is not recognised! Try inputing well or try a different language")
+            #     print
+def lang_list():
+    choice = input("Would you like a list of available languages? Y/n ")
+    if "Y" in choice or "y" in choice:
+        specific_lang = response.json()['data']['languages']
+        for lang in specific_lang:
+            print(lang['name'])
+    elif "n" in choice or "N" in choice:
+        pass
+    else:
+        print("Select valid option")
 
+
+lang_list()
 recognise_lang()
